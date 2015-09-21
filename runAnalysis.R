@@ -82,11 +82,17 @@ head(testData,1)
 finalData = rbind(trainingData,testData);
 head(finalData,1)
 
+View(testData)
+dim(testData)
+View(finalData)
+dim(finalData)
 ##############################################################################################
 ## 2.##Extracts only the measurements on the mean and standard deviation for each measurement. 
 ##############################################################################################
 
-finColNames  = colnames(finalData)
+colNames  = colnames(finalData)
+View(colNames)
+
 IsMeasures =
 (grepl("activity..",colNames)| grepl("subject..",colNames)| grepl("-mean..",colNames)
 & !grepl("-meanFreq..",colNames)& !grepl("mean..-",colNames) | grepl("-std..",colNames)
@@ -138,6 +144,7 @@ colnames(finalData) = finColNames
 ##average of each variable for each activity and each subject. 
 ###########################################################################################
 ##Find Mean of the data frame  finalData
+library(dplyr)
 finalMeanData <- finalData %>% 
 group_by(activityId,subjectId,activityType ) %>% 
 summarise_each(funs(mean))
