@@ -1,18 +1,21 @@
 ##CookBook  
-  1.Clean up workspace 
-  2.Read data files
-  # Read features,activityType, subjectTrain, xTrain, yTrain  data from files 
-  3.Merges the training and the test sets to create one data set.
-  4.Create the final training set by merging yTrain, subjectTrain, and xTrain 
-  5. Read in the test data 
-  6.Assign column names to the test data imported above 
-  7.Create the final test set by merging the xTest, yTest and subjectTest data 
-  8.Combine training and test data to create a final data set 
-  9.Extracts only the measurements on the mean and standard deviation for each measurement
-  10.Uses descriptive activity names to name the activities in the data set
-  11.Merge the finalData set with the acitivityType table to include descriptive activity names 
-  12. Appropriately labels the data set with descriptive variable names. 
-  13.Assign the new column names to the finalData
-  14.From the final dataset creates a second, Find Mean of the data frame  finalData
-  15.Export the tidyData set  
-  write.table(finalMeanData, 'UCI HAR Dataset/finalMeanData.txt',row.names=FALSE,sep='\t');
+	1.Clean up workspace 
+	2.Read data files
+		# Read features,activityType, subjectTrain, xTrain, yTrain  data from files 
+	3.Create final data sets.
+		# Create the final training set by merging yTrain, subjectTrain, and xTrain 
+		# trainingData = cbind(yTrain,subjectTrain,xTrain);	
+		# Create the final test set by merging the xTest, yTest and subjectTest data
+		# testData = cbind(yTest,subjectTest,xTest)
+	4.Merges the training and the test sets to create one data set.
+		# finalData = rbind(trainingData,testData);
+	5.Extracts only the measurements on the mean and standard deviation for each measurement
+		# Assign column names to the test data imported above 
+		# Extract columns which has the measurements on the mean and standard deviation using grepl
+		# Uses descriptive activity names to name the activities in the data set on column names
+		# Merge the finalData set with the acitivityType table to in clude descriptive activity names 
+		# Appropriately labels the data set with descriptive variable names. 
+		# Assign the new column names to the finalData
+	14.From the final dataset creates a second, Find Mean of the data frame  finalData (use library dplyr) with summarise and group_by functions
+	15.Export the tidyData set  
+	write.table(finalMeanData, 'UCI HAR Dataset/finalMeanData.txt',row.names=FALSE,sep='\t');
