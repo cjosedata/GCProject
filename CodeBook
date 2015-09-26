@@ -16,6 +16,6 @@
 		# Merge the finalData set with the acitivityType table to in clude descriptive activity names 
 		# Appropriately labels the data set with descriptive variable names. 
 		# Assign the new column names to the finalData
-	14.From the final dataset creates a second, Find Mean of the data frame  finalData (use library dplyr) with summarise and group_by functions
-	15.Export the tidyData set  
+	6.From the final dataset creates a second, Find Mean of the data frame  finalData (use library dplyr) with summarise and group_by functions
+	7.Export the tidyData set  
 	write.table(finalMeanData, 'UCI HAR Dataset/finalMeanData.txt',row.names=FALSE,sep='\t');
